@@ -1,0 +1,71 @@
+/* Reset some default browser styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply classic fonts */
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+#video-container, #audio-container, #animation-container, #graphics-container, #text-container {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    text-align: center;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+video, audio {
+    width: 100%;
+}
+
+#animation-canvas {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #333;
+}
+
+#graphics-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+#text-container p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Style buttons if needed */
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add hover effect to buttons */
+button:hover {
+    background-color: #555;
+}
+
+/* Apply styles for multimedia controls */
+video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+audio::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}

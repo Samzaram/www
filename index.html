@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimedia Web Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Multimedia Application</h1>
+    </header>
+    <div id="text-container">
+        <p>The World Wide Web, often referred to as the "web" or "www," is a system of interconnected hypertext documents and multimedia content that is accessed via the internet.
+         It was created by Tim Berners-Lee in 1989 and has since become a fundamental part of the internet.</p>
+    </div>
+    <div id="graphics-container">
+        <img src="www_image.png" alt="Sample Image">
+    </div>
+    <div id="audio-container">
+        <audio controls>
+            <source src="www_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+    <div id="animation-container">
+        <canvas id="animation-canvas" width="400" height="200"></canvas>
+    </div>
+    
+    <div id="video-container">
+        <video controls>
+            <source src="www_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // JavaScript code for animation
+        const canvas = document.getElementById('animation-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create an Image object to load the image for animation
+        const image = new Image();
+        image.src = 'www_animation.png'; // Replace with the URL of your image
+
+        // Create a simple animation
+        let x = 0;
+        const animationSpeed = 2;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            x += animationSpeed;
+
+            if (x > canvas.width) {
+                x = -100;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the image on the canvas for animation
+            ctx.drawImage(image, x, 0, 100, 100);
+        }
+
+        // Ensure the image is loaded before starting the animation
+        image.onload = () => {
+            animate();
+        };
+    </script>
+</body>
+</html>
